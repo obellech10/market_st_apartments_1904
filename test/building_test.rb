@@ -3,6 +3,7 @@ require 'minitest/pride'
 require './lib/apartment'
 require './lib/renter'
 require './lib/building'
+require 'pry'
 
 class BuildingTest < MiniTest::Test
 
@@ -26,6 +27,12 @@ class BuildingTest < MiniTest::Test
 
     assert_equal [@a1, @b2], @building.units
   end
-  
+
+  def test_average_rent_per_building
+    @building.add_unit(@a1)
+    @building.add_unit(@b2)
+
+    assert_equal 1099.5, @building.average_rent
+  end
 
 end
