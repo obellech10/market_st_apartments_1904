@@ -20,4 +20,11 @@ class ApartmentTest < Minitest::Test
     assert_equal 1, @a1.bathrooms
     assert_equal 1, @a1.bedrooms
   end
+
+  def test_renter_empty_then_have_renter
+    assert_equal nil, @a1.renter
+
+    @a1.add_renter(@jessie)
+    assert_equal @jessie, @a1.renter 
+  end
 end
