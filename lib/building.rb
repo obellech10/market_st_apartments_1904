@@ -25,10 +25,9 @@ class Building
         all_renters << unit
       end
     end
-
     highest_rent = all_renters.max_by do |unit|
-           unit.monthly_rent
-         end
+      unit.monthly_rent
+      end
     highest_rent.renter
   end
 
@@ -37,7 +36,7 @@ class Building
 
     @units.each do |unit|
       if unit.renter != nil
-          renter_breakdown[unit.renter.name] = unit.monthly_rent * 12
+        renter_breakdown[unit.renter.name] = unit.monthly_rent * 12
       end
     end
     renter_breakdown
